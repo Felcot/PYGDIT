@@ -14,8 +14,7 @@ const io = new Server(server,{
         methods: ['GET','POST'],
     },
 });
-const user = require('./models/Users');
-user();
+
 
 io.on('connection',(socket)=>{
     conectedUserLog({msg:socket.id,surname:'UserLog'})
