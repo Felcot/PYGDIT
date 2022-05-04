@@ -3,7 +3,7 @@ const app = express();
 const http = require('http');
 const {Server} = require('socket.io');
 const cors = require('cors');
-const {serverLog,errorLog,succefulLog,conectedUserLog} = require('./models/logsColors/ConsoleLog');
+const {serverLog,conectedUserLog} = require('./src/models/logsColors/ConsoleLog');
 
 app.use(cors());
 
