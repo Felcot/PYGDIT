@@ -1,0 +1,22 @@
+{
+  "name": "astro-cats",
+  "version": "1.0.0",
+  "description": "Control de emociones, para combatir el fracaso de misiones estelares de tiempo prolongado. ",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Felcot/PYGDIT.git"
+  },
+  "author": "Felipe Costa Tébar; Mykola Mandzyak Melnyk; Miguel Ángel Picazo Fernández",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Felcot/PYGDIT/issues"
+  },
+  "homepage": "https://github.com/Felcot/PYGDIT#readme"
+}
