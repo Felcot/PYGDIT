@@ -1,6 +1,6 @@
 .submit{
-    @apply bg-green-300 hover:bg-green-700 text-slate-600 hover:text-white
+    
 }
 .cancel{
-    @apply bg-red-300 hover:bg-red-700 text-slate-600 hover:text-white
+    
 }
