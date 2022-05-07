@@ -1,12 +1,14 @@
 import './App.css';
-import Login from './components/Login/Login';
+import { Register } from './components/register/Register';
+import Login  from './components/login/Login';
 import Client from './client';
 const client = new Client();
 
 function App() {
   return (
     <div className="App">
-      <Login client={client}/>
+      <Register client={client}/>
+      <Login client={client} />
     </div>
   );
 }
