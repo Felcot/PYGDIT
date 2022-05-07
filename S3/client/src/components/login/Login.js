@@ -25,11 +25,9 @@ function Login({className,client}){
                     <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Contraseña'type='password' placeholder='Contraseña...' id='password' onChange={handlePass}/>
                 </div>
                 <div className='loginRow'>
-                    <Button className='submit'content='Iniciar'/>
+                    <Button className='buttonLogin' content='Iniciar'/>
                     <a className='forgotPassword' href="#"> ¿Contraseña olvidada?</a>
                 </div>
-               
-                    <label className='register'>Registrarse</label>
             </form>
     );
 }
