@@ -1,0 +1,11 @@
+.form{
+    @apply bg-white  rounded px-8 pt-6 pb-8 mb-4;
+}
+
+
+.forgotPassword{
+    @apply inline-block align-baseline font-bold text-sm text-red-500 hover:text-red-800
+}
+.register{
+    @apply inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800
+}
