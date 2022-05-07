@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
 function Client() {
 
-    this.socket = io.connect('http://localhost:3001');
+    this.socket = io.connect('http://54.226.225.169:3001');
     this.equals=({a,b})=>{
         return a===b;
     }
