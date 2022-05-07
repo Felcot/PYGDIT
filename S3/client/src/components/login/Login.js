@@ -18,13 +18,13 @@ function Login({className,client}){
     return (
         
             <form className='form' onSubmit={handleSubmit}>
-                <div class="mb-4">
-                    <LabelInput labelName='Usuario' placeholder='Usuario...' id='user' onChange={handleName}/>
+                <div className="loginRow">
+                    <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Usuario' placeholder='Usuario...' id='user' onChange={handleName}/>
                 </div>
-                <div class="mb-6">
-                    <LabelInput labelName='Contraseña'type='password' placeholder='Contraseña...' id='password' onChange={handlePass}/>
+                <div className="loginRow">
+                    <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Contraseña'type='password' placeholder='Contraseña...' id='password' onChange={handlePass}/>
                 </div>
-                <div className='flex items-center justify-between'>
+                <div className='loginRow'>
                     <Button className='submit'content='Iniciar'/>
                     <a className='forgotPassword' href="#"> ¿Contraseña olvidada?</a>
                 </div>

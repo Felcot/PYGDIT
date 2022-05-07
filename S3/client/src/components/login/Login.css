@@ -1,7 +1,26 @@
 .form{
-
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
+.miniTitle{
+    font-size: larger;
+}
+
+.borderBox{
+    border-radius: 15px 15px;
+    padding: 4px;
+}
+
+.loginRow{
+    margin: 1.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .forgotPassword{
 

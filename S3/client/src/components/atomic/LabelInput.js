@@ -1,9 +1,10 @@
 import './LabelInput.css'
 export const LabelInput = ({labelName,type,classLabel,classInput,id,placeholder,onChange})=>{
+    console.log(classLabel);
     return (
-        <div>
-            <label className={'label ' +classLabel} htmlFor={id}> {labelName} </label>
-            <input type={type} className={'input '+ classInput} placeholder={placeholder} id={id} onChange={onChange}/>
-        </div>
+        <>
+            <label className={'label'+` ${classLabel?classLabel:''}`} htmlFor={id}> {labelName} </label>
+            <input type={type} className={'input'+` ${classInput?classInput:''}`} placeholder={placeholder} id={id} onChange={onChange}/>
+        </>
     )
 }
