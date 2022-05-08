@@ -1,0 +1,36 @@
+service: proyecto-astronautas
+
+provider:
+  name: aws
+  runtime: python3.9
+  iam:
+    role: arn:aws:iam::724872358687:role/LabRole
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:ListBucket
+        - s3:GetObject
+        - s3:DeleteObject
+      Resource: arn:aws:s3:::proyecto-astronautas/*
+    - Effect: Allow
+      Action: 
+        - rekognition:DetectFaces
+      Resource: "*"
+            
+      
+
+  
+functions:
+  estudiarImagen:
+    handler: handler.estudiarImagen
+    events:
+      - s3:
+          bucket: proyecto-astronautas
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: uploads/
+            - suffix: .jpg
+
+
+          
+          
