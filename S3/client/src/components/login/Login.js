@@ -2,7 +2,6 @@ import './Login.css';
 import { useState } from 'react';
 import { LabelInput} from '../atomic/LabelInput';
 import { Button } from '../atomic/Button';
-import { Camera } from '../camera/Camera';
 
 function Login({className,client}){
     const [userName , setUserName] = useState('');

@@ -1,6 +1,13 @@
-.submit{
-    
-}
-.cancel{
-    
+.buttonCancel{
+    border-radius: 5px 5px;
+    box-shadow: 1px 1px 2px black;
+    font-size: unset;
+    background-color: #8ab2ff;
+    border-style: none;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: lightyellow;
+    margin-right: 5px;
+    margin-left: 5px;
 }
