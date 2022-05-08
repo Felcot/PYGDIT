@@ -3,9 +3,7 @@
     display: block;
 }
 
-
-img,
-video,
-button {
-  
-}
+img,button,video{
+    width: 100%;
+    display: block;
+  }

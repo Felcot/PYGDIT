@@ -1,11 +1,8 @@
-//import { createRoot } from 'react-dom/client';
 import Webcam from "react-webcam";
 import React from "react";
+import './Camera.css'
 
-//const container = document.getElementsByTagName('video');
-//const root = createRoot(container);
-
-function Camera({className,client}){
+function Camera(){
     const webcamRef = React.useRef(null);
     const [imgSrc, setImgSrc] = React.useState(null);
     
@@ -30,7 +27,5 @@ function Camera({className,client}){
         </>
         );
 };
-
-        //root.render(<WebcamCapture />);
 
 export default Camera;

@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-content: space-between;
+    margin-top: 30%;
+    font-family: sans-serif;
 }
 
 .miniTitle{
@@ -32,6 +34,7 @@
     padding-left: 10px;
     padding-right: 10px;
     color: lightyellow;
+    width: 50%;
 }
 
 .forgotPassword {
