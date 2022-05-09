@@ -1,0 +1,23 @@
+.header{
+    position: fixed;
+    background: #333;
+	color: white;
+	height: 75px;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.logoCat {
+    float: left;
+    width: 75px;
+    height: 75px;
+    margin-left: 25px;
+  }
+
+.titleCat{
+    height: 45px;
+    margin-left: 110px;
+    width: 50%;
+    margin-top: 15px;
+}

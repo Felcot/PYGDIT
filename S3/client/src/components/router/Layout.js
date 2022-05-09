@@ -5,8 +5,8 @@ const Layout = () => {
   return (
     <>
       <nav className="navItem"> 
-            <Link to="/login">Iniciar Sesión</Link>
-            <Link to="/register">Registrarse</Link>
+            <Link className='menuLink' to="/login">Iniciar Sesión</Link>
+            <Link className='menuLink' to="/register">Registrarse</Link>
       </nav>
       <Outlet />
     </>
