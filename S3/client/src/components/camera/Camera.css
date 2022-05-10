@@ -2,9 +2,9 @@
     width: 100%;
 }
 
-img{
+.resultImg{
     width: 75%;
-    margin-left: 10%;
+    margin-left: 12.5%;
     margin-top: 15px;
     border-radius: 20px 20px;
 }
@@ -30,21 +30,50 @@ img{
     font-size: 5vh;
     margin-bottom: 15px;
 }
-
-.takeCancel{
-    width: 65%;
+.take{
+    width: 40%;
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
-    /* margin-left: 10%; */
+    margin-left: 32.5%;
     align-content: 5px;
-    /* margin: 15px; */
-    margin-left: 17.5%;
+}
+
+.saveCancel{
+    width: 50%;
+    display: flex;
+    margin-left: 25%;
+    align-content: 5px;
+    margin-top: 12.5px;
 }
 .tomarImg{
     margin-right: 10%;
+    text-align: center;
+    background-color: #8ab2ff;
+    border-style: none;
+    color: lightyellow;
 }
 
 .cancelarImg{
+    text-align: center;
+    background-color: #8ab2ff;
+    border-style: none;
+    color: lightyellow;
+}
 
+.take button:hover {
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -ms-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    transform:scale(1.2);
+    background-color: rgb(101, 101, 255);
+}
+
+.saveCancel button:hover{
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -ms-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    transform:scale(1.2);
+    background-color: rgb(101, 101, 255);
 }

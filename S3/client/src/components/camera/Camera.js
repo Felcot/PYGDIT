@@ -4,6 +4,7 @@ import './Camera.css'
 import Header from "../../header/Header";
 import Footer from "../../footer/Footer";
 import { Outlet } from "react-router-dom";
+import { Button } from "../atomic/Button";
 
 function Camera(){
     const webcamRef = React.useRef(null);
@@ -18,6 +19,10 @@ function Camera(){
         setImgSrc("");
     }, [setImgSrc]);
 
+    const save = React.useCallback(() => {
+        //ToDo
+    }, [setImgSrc]);
+
     return (
         <>
         <Header></Header>
@@ -29,14 +34,19 @@ function Camera(){
             screenshotFormat="image/jpeg"
             />
         </div>
-        <div className="takeCancel">
+        <div className="take">
             <button className="tomarImg" onClick={capture}>Tomar foto</button>
-            <button className="cancelarImg" onClick={cancel}>Cancelar</button>
         </div>
             {imgSrc && (
-                <img
-                    src={imgSrc}
-                />
+                <>
+                    <img className="resultImg"
+                        src={imgSrc}
+                    />
+                    <div className="saveCancel" >
+                        <button className="tomarImg" onClick={save}>Guardar</button>
+                        <button className="cancelarImg" onClick={cancel}>Cancelar</button>
+                    </div>
+                </>
             )}
             <Footer></Footer>
             <Outlet></Outlet>
