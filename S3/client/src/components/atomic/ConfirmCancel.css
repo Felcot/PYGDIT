@@ -11,5 +11,15 @@
     margin-right: 5px;
     margin-left: 5px;
     margin-bottom: 15px;
+    margin-top: 5vh;
     width: 25vh;
+    text-decoration: none;
+}
+.buttonCancel:hover {
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -ms-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    transform:scale(1.2);
+    background-color: rgb(101, 101, 255);
 }

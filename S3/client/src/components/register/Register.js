@@ -30,12 +30,12 @@ export const Register = ({client})=>{
             <div className="loginRow">
                 <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Re-Contraseña' placeholder='Contraseña' onChange = {(e)=>{setUserPassRe(e.target.value)}} />
             </div>
-            <div className='loginRow'>
-                <Link className='buttonLogin' to='/login'>Iniciar</Link>
+            <div className='loginRowBotton'>
                 <ConfirmCancel onConfirm={()=>{}} onCancel={()=>{}}/>
             </div>
         </form>
         <Footer></Footer>
+        <Outlet/>
     </>
     );
 }
