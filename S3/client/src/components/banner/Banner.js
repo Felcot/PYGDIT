@@ -3,6 +3,7 @@ import './Banner.css'
 import logoAstroCat from '../../img/astrocatlogo.png'
 import titleAstroCat from '../../img/astroCatsTitle.png'
 import rocket from '../../img/rocket.png'
+import Footer from "../../footer/Footer";
 
 const Banner = () => {
   return (

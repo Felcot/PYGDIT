@@ -71,6 +71,21 @@ body{
     margin-top: 20vh;
     font-size: 5vh;
 }
-.register{
 
+.buttonLogin:hover {
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -ms-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    transform:scale(1.2);
+    background-color: rgb(101, 101, 255);
+}
+
+.buttonRegister:hover {
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -ms-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    transform:scale(1.2);
+    background-color: rgb(101, 101, 255);
 }
