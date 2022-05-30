@@ -1,26 +1,24 @@
-import io from 'socket.io-client';
+import WebSocket from "./client/WebSocket";
+import Rest from "./client/Rest";
 function Client() {
-
-    this.socket = io.connect('http://localhost:3001');
+    this.rest = new Rest
+    this.ws =  new WebSocket();
     this.equals=({a,b})=>{
         return a===b;
     }
-    /*                  *
-     *     SOCKET EMIT  * 
-     *                  */
+    
     this.login=({userName,userPass})=>{
-        console.log({userName,userPass});
+        this.ws.login({userName:userName,userPass:userPass})
     }
 
-    this.sended =(value)=>{
-        this.socket.emit('sended',{message:value});
+    this.save = (formData)=>{
+        this.rest.save(formData);
     }
-    /*                  *
-     *     SOCKET ON    * 
-     *                  */
-    this.recived = (value)=>{
-        this.socket.on('recived',value);
+    
+    
+    this.init = () =>{
+        this.ws.deploy();
+        this.rest.deploy();
     }
-
 }
 export default Client;
