@@ -5,21 +5,21 @@ import './Register.css';
 import Header from "../../header/Header";
 import Footer from "../../footer/Footer";
 import { Link, Outlet } from "react-router-dom";
-
-export const Register = ({client})=>{
-    client.say('Hello');
+import client from '../../client'
+export const Register = ({clt})=>{
+    clt = clt || client();
     const [userName,setUserName] = useState('');
     const [userPass,setUserPass] = useState('');
     const [userPassRe,setUserPassRe] = useState('');
     const handleRegister = (event)=>{
         event.preventDefault();
-        if(client.equals({userPass,userPassRe}))return;
-        client.register({userName,userPass,userPassRe});
+        if(clt.equals({userPass,userPassRe}))return;
+        clt.register({userName,userPass,userPassRe});
     }
     const byConfirmed = (e) =>{
         e.preventDefault();
         if(userPass === userPassRe)
-            client.register({userName:userName,userPass:userPass});
+            clt.register({userName:userName,userPass:userPass});
     }
     const byCanceled=(e)=>{
         e.preventDefault();

@@ -6,6 +6,7 @@ function WebSocket(){
      *     SOCKET EMIT  * 
      *                  */
     this.login = ({userName,userPass})=>{
+        console.log(`[WebSocket]=> login`)
         this.socket.emit('login',{userName:userName,userPass:userPass});
     }
     this.register = ({userName,userPass}) =>{
@@ -20,6 +21,13 @@ function WebSocket(){
         this.socket.on('connect',()=>{
             console.log('Conectado con el servidor de WS')
         });
+
+        this.socket.on('login',(a)=>{
+            window.location = '/camera';
+        })
+        this.socket.on('notLogin',(a)=>{
+            window.location = '/login';
+        })
     }
 }
 

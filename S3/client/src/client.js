@@ -1,7 +1,9 @@
 import WebSocket from "./client/WebSocket";
 import Rest from "./client/Rest";
 function Client() {
+    this.deplayed = false;
     this.say = (msg) =>{
+       
         console.log(msg)
     }
     this.rest = new Rest
@@ -11,6 +13,7 @@ function Client() {
     }
     
     this.login=({userName,userPass})=>{
+        console.log(`[client]=> login`)
         this.ws.login({userName:userName,userPass:userPass})
     }
     
@@ -24,8 +27,16 @@ function Client() {
     
     
     this.init = () =>{
+        if(this.deplayed) return;
         this.ws.deploy();
-        this.rest.deploy();
+        this.deplayed=true;
     }
+    this.init();
 }
-export default Client;
+
+const client = () =>{
+    if(!window.pygtic)
+        window.pygtic = {client: new Client()};
+   return window.pygtic.client = window.pygtic.client || new Client();
+}
+export default client;

@@ -29,8 +29,14 @@ function WebSocket(app){
         conectedUserLog({msg:socket.id,surname:'UserLog'})
 
         socket.on('register',({userName,userPass})=>{
-            console.log({userName,userPass})
+            serverLog({msg:'Intendando registrarse...'})
             modelo.register({userName:userName,userPass:userPass});
+        })
+        socket.on('login',({userName,userPass})=>{
+            serverLog({msg:'Intendando iniciar sesión...'})
+            modelo.login({userName:userName,userPass:userPass},(correct) =>{
+                this.toSender(socket,(correct ?'login':'notLogin'),correct);
+            })
         })
     });
 
