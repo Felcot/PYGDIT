@@ -5,7 +5,8 @@ const style = {
     Server: '\x1b[36m',
     reset:'\x1b[0m',
     Connect: '\x1b[35m',
-    Loading: '\x1b[34m'
+    Loading: '\x1b[34m',
+    Neutral:'\x1b[0m'
 }
 
 module.exports = style;

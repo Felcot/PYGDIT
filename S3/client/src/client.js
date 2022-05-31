@@ -1,6 +1,9 @@
 import WebSocket from "./client/WebSocket";
 import Rest from "./client/Rest";
 function Client() {
+    this.say = (msg) =>{
+        console.log(msg)
+    }
     this.rest = new Rest
     this.ws =  new WebSocket();
     this.equals=({a,b})=>{
@@ -9,6 +12,10 @@ function Client() {
     
     this.login=({userName,userPass})=>{
         this.ws.login({userName:userName,userPass:userPass})
+    }
+    
+    this.register = ({userName,userPass}) =>{
+        this.ws.register({userName:userName,userPass:userPass});
     }
 
     this.save = (formData)=>{

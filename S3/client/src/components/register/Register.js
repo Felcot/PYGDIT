@@ -7,6 +7,7 @@ import Footer from "../../footer/Footer";
 import { Link, Outlet } from "react-router-dom";
 
 export const Register = ({client})=>{
+    client.say('Hello');
     const [userName,setUserName] = useState('');
     const [userPass,setUserPass] = useState('');
     const [userPassRe,setUserPassRe] = useState('');
@@ -15,7 +16,18 @@ export const Register = ({client})=>{
         if(client.equals({userPass,userPassRe}))return;
         client.register({userName,userPass,userPassRe});
     }
-
+    const byConfirmed = (e) =>{
+        e.preventDefault();
+        if(userPass === userPassRe)
+            client.register({userName:userName,userPass:userPass});
+    }
+    const byCanceled=(e)=>{
+        e.preventDefault();
+            setUserName('');
+            setUserPass('');
+            setUserPassRe('');
+        window.location = '/Login';
+    }
     return (
         <>
         <Header></Header>
@@ -25,13 +37,13 @@ export const Register = ({client})=>{
                 <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Usuario' placeholder='Usuario'          onChange = {(e)=>{setUserName(e.target.value)}} />
             </div>
             <div className="loginRow">
-                <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Contraseña' placeholder='Contraseña' onChange = {(e)=>{setUserPass(e.target.value)}} />
+                <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Contraseña' type='password' placeholder='Contraseña' onChange = {(e)=>{setUserPass(e.target.value)}} />
             </div>
             <div className="loginRow">
-                <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Re-Contraseña' placeholder='Contraseña' onChange = {(e)=>{setUserPassRe(e.target.value)}} />
+                <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Re-Contraseña' type='password' placeholder='Contraseña' onChange = {(e)=>{setUserPassRe(e.target.value)}} />
             </div>
             <div className='loginRowBotton'>
-                <ConfirmCancel onConfirm={()=>{}} onCancel={()=>{}}/>
+                <ConfirmCancel onConfirm={byConfirmed} onCancel={byCanceled}/>
             </div>
         </form>
         <Footer></Footer>

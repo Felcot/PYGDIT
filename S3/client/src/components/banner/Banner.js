@@ -8,11 +8,11 @@ import Footer from "../../footer/Footer";
 const Banner = () => {
   return (
     <>
-        <div class="dj-banner">
-            <div class="dj-bg">
+        <div className="dj-banner">
+            <div className="dj-bg">
                 <img className='imgBannerCat' src={logoAstroCat} />
                 <img className='imgBannerTitle' src={titleAstroCat}></img>
-                <div class="dj-text">
+                <div className="dj-text">
                     <h2>Bienvenido!! Despegamos!!</h2>
                     <Link className='labelEntrar' to="/login"><img src={rocket}/></Link>
                 </div>

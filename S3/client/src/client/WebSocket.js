@@ -6,9 +6,12 @@ function WebSocket(){
      *     SOCKET EMIT  * 
      *                  */
     this.login = ({userName,userPass})=>{
-        this.socket.emit('login',{userName:userName,userPass:userPass})
+        this.socket.emit('login',{userName:userName,userPass:userPass});
     }
-    
+    this.register = ({userName,userPass}) =>{
+        this.socket.emit('register',{userName:userName,userPass:userPass});
+
+    }
     /*                  *
      *     SOCKET ON    * 
      *                  */

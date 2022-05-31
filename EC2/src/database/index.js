@@ -8,12 +8,12 @@ const createAndConnect = ()=>{
       console.log()
       databaseLog({msg:'Iniciando mongo...',state:'Loading'})
       mongoClient.connect((db)=>{
-            databaseLog({msg:'Conectado a Atlas',state:'Succefull'})
+            databaseLog({msg:'Conectado a Atlas',state:'Succeful'})
       });
       return mongoClient;
 }
 
-const mongo =()=>{
+const mongo = () => {
 
       return(
             mongoClient || createAndConnect()
@@ -21,4 +21,4 @@ const mongo =()=>{
 
 }
 
-module.exports = mongo;
+module.exports.mongo = mongo;

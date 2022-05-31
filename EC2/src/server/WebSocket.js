@@ -1,7 +1,10 @@
-function WebSocket(){
+const {serverLog,conectedUserLog} = require('../models/logsColors/ConsoleLog')
+function WebSocket(app){
     const http = require('http');
     const {Server} = require('socket.io');
     const server = http.createServer(app);
+    const {Modelo} = require('../models/Modelo');
+    const modelo = new Modelo();
     const io = new Server(server,{
         cors: {
             origin:'http://localhost:3000',
@@ -24,6 +27,11 @@ function WebSocket(){
 
     io.on('connection',(socket)=>{
         conectedUserLog({msg:socket.id,surname:'UserLog'})
+
+        socket.on('register',({userName,userPass})=>{
+            console.log({userName,userPass})
+            modelo.register({userName:userName,userPass:userPass});
+        })
     });
 
     server.listen(3001,()=>{

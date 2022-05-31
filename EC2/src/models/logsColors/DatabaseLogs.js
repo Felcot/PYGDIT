@@ -8,6 +8,7 @@ module.exports = {
         msg = state == 'Succeful' ? style.Succeful + msg : msg;
         msg = state == 'Error' ? style.Error + msg : msg;
         msg = state == 'Loading' ? style.Loading + msg : msg;
+        msg = state == 'Neutral' ? style.Neutral + msg : msg;
         
         dbLog.consoleLog({msg,tabs : tabs,line : line,surname : surname});
         

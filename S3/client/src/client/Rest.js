@@ -1,5 +1,5 @@
 function Rest(){
-    this.save =(formData)=>{
+/*    this.save =(formData)=>{
         $.ajax({
             type: 'POST',
             url: '/upload',
@@ -10,7 +10,7 @@ function Rest(){
             contentType: false,
             processData:false
           });
-    }
+    }*/
 }
 
 export default Rest;
