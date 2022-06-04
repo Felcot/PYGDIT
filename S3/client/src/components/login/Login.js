@@ -5,13 +5,14 @@ import { Button } from '../atomic/Button';
 import Header from '../../header/Header';
 import Footer from '../../footer/Footer';
 import { Link, Outlet } from "react-router-dom";
-
-function Login({className,client}){
+import client from '../../client'
+function Login({className,clt}){
+    clt = clt || client();
     const [userName , setUserName] = useState('');
     const [userPass , setUserPass] = useState('');
     const handleSubmit = (event)=>{
         event.preventDefault();
-        client.login({userName,userPass});
+        clt.login({userName,userPass});
     }
     const handleName = (event)=>{
         setUserName(event.target.value);
@@ -32,7 +33,7 @@ function Login({className,client}){
                     <LabelInput classLabel='miniTitle' classInput='borderBox' labelName='Contraseña'type='password' placeholder='Contraseña...' id='password' onChange={handlePass}/>
                 </div>
                 <div className='loginRow'>
-                    <Link className='buttonLogin' to='/camera'>Iniciar</Link>
+                    <button className='buttonLogin'>Iniciar</button>
                     <a className='forgotPassword' href="#"> ¿Contraseña olvidada?</a>
                     <h3>¿No estás registrado?</h3>
                     <Link className='buttonRegister' to='/register'>Registrarse</Link>

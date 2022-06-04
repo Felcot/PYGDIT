@@ -1,26 +1,44 @@
-import io from 'socket.io-client';
+import WebSocket from "./client/WebSocket";
+import Rest from "./client/Rest";
 function Client() {
-
-    this.socket = io.connect('http://localhost:3001');
+    this.deplayed = false;
+    this.say = (msg) =>{
+       
+        console.log(msg)
+    }
+    this.rest = new Rest
+    this.ws =  new WebSocket();
     this.equals=({a,b})=>{
         return a===b;
     }
-    /*                  *
-     *     SOCKET EMIT  * 
-     *                  */
+    
     this.login=({userName,userPass})=>{
-        console.log({userName,userPass});
+        console.log(`[client]=> login`)
+        this.ws.login({userName:userName,userPass:userPass})
+    }
+    
+    this.register = ({userName,userPass}) =>{
+        this.ws.register({userName:userName,userPass:userPass});
     }
 
-    this.sended =(value)=>{
-        this.socket.emit('sended',{message:value});
+    this.save = (formData)=>{
+        this.rest.save(formData);
     }
-    /*                  *
-     *     SOCKET ON    * 
-     *                  */
-    this.recived = (value)=>{
-        this.socket.on('recived',value);
+    this.savePicture = ({imageToSave})=>{
+        this.ws.savePicture({imageToSave:imageToSave});
     }
-
+    
+    this.init = () =>{
+        if(this.deplayed) return;
+        this.ws.deploy();
+        this.deplayed=true;
+    }
+    this.init();
 }
-export default Client;
+
+const client = () =>{
+    if(!window.pygtic)
+        window.pygtic = {client: new Client()};
+   return window.pygtic.client = window.pygtic.client || new Client();
+}
+export default client;

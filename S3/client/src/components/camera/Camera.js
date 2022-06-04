@@ -5,8 +5,9 @@ import Header from "../../header/Header";
 import Footer from "../../footer/Footer";
 import { Outlet } from "react-router-dom";
 import { Button } from "../atomic/Button";
-
+import client from '../../client'
 function Camera(){
+    const clt = client();
     const webcamRef = React.useRef(null);
     const [imgSrc, setImgSrc] = React.useState(null);
     
@@ -21,7 +22,8 @@ function Camera(){
 
     const save = React.useCallback(() => {
         //ToDo
-    }, [setImgSrc]);
+        clt.savePicture({imageToSave:imgSrc})
+    }, [clt,imgSrc]);
 
     return (
         <>

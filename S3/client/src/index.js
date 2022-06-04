@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import Router from './Router';
 import reportWebVitals from './reportWebVitals';
+import client from './client';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Router />
+      <Router clt={client()} />
   </React.StrictMode>
 );
 
