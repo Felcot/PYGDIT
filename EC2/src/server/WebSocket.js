@@ -38,6 +38,11 @@ function WebSocket(app){
                 this.toSender(socket,(correct ?'login':'notLogin'),correct);
             })
         })
+        socket.on('savePicture',({imageToSave})=>{
+            modelo.savePicture({imageToSave:imageToSave},(correct)=>{
+                this.toSender(socket,'savePicture',correct)
+            });
+        })
     });
 
     server.listen(3001,()=>{

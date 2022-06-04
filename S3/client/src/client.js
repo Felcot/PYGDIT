@@ -24,7 +24,9 @@ function Client() {
     this.save = (formData)=>{
         this.rest.save(formData);
     }
-    
+    this.savePicture = ({imageToSave})=>{
+        this.ws.savePicture({imageToSave:imageToSave});
+    }
     
     this.init = () =>{
         if(this.deplayed) return;

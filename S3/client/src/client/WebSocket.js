@@ -11,7 +11,10 @@ function WebSocket(){
     }
     this.register = ({userName,userPass}) =>{
         this.socket.emit('register',{userName:userName,userPass:userPass});
+    }
 
+    this.savePicture = ({imageToSave}) => {
+        this.socket.emit('savePicture',{imageToSave:imageToSave});
     }
     /*                  *
      *     SOCKET ON    * 
@@ -28,6 +31,11 @@ function WebSocket(){
         this.socket.on('notLogin',(a)=>{
             window.location = '/login';
         })
+
+        this.socket.on('savePicture',(a)=>{
+            window.location = '/camera';
+            alert(a.msg);
+        });
     }
 }
 
