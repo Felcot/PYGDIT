@@ -1,0 +1,23 @@
+.gatito{
+    margin-top:100px;
+}
+
+.titleG{
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 5vh;
+    margin-bottom: 15px;
+}
+.volverCamara{
+    margin-top: 20px;
+    width: 150px;
+    height: 30px;
+    margin-left: calc(50% - 75px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border : none;
+}
+.volverCamara:hover{
+    background-color: rgb(168, 167, 167);
+}
