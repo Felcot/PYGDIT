@@ -4,6 +4,7 @@ import Login from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import Banner from "./components/banner/Banner";
 import Camera from "./components/camera/Camera"; 
+import Gatito from './components/gatito/Gatito';
 import client from './client'
 const Router = ({clt}) => {
   clt = clt || client();
@@ -15,6 +16,7 @@ const Router = ({clt}) => {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register clt={clt}/>}></Route>
             <Route path="/camera" element={<Camera />}></Route>
+            <Route path="/gatito" element={<Gatito />}></Route>
             <Route path="*" element={<h1>Error 404</h1>}></Route>
         </Routes>
       </BrowserRouter>

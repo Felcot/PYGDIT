@@ -1,7 +1,8 @@
 import io from 'socket.io-client';
+import client from '../client';
 function WebSocket(){
     this.socket = io.connect('http://localhost:3001');
-
+    this.clt = undefined;
     /*                  *
      *     SOCKET EMIT  * 
      *                  */
@@ -19,8 +20,10 @@ function WebSocket(){
     /*                  *
      *     SOCKET ON    * 
      *                  */
-    this.deploy = ()=>{
+    this.deploy = (clt)=>{
         let cli = this;
+        cli.clt = clt;
+        
         this.socket.on('connect',()=>{
             console.log('Conectado con el servidor de WS')
         });
@@ -33,8 +36,13 @@ function WebSocket(){
         })
 
         this.socket.on('savePicture',(a)=>{
-            window.location = '/camera';
-            alert(a.msg);
+            if(!a.ok){
+                window.location = '/camera';
+                alert(a.msg);
+            }else{
+                window.location = '/gatito';
+            }
+            
         });
     }
 }
